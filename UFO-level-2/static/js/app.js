@@ -1,3 +1,5 @@
+/// UFO LEVEL 2
+
 // from data.js
 var tableData = data;
 
@@ -13,10 +15,10 @@ tableData.forEach((ufo) => {
     });
   });
 
-// Select the button 
+// Select the button by id
 var button = d3.select("#filter-btn");
 
-// Select the form 
+// Select the form by id
 var form = d3.select("#datetime");
 
 // Create the event handlers when a button/form is selected
@@ -58,10 +60,10 @@ function runEnter() {
     }
 
     
-    // Showing input value results on the table 
+    // Showing filtered results on the table 
     if (filteredData.length === 0) {
         tbody.html("");
-        tbody.text("Sorry, there are no UFO sightings for the values you entered");
+        tbody.text("Sorry, there are no UFO sightings for the values you entered! Please try again.");
     }
     else {
         tbody.html("");
