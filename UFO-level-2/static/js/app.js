@@ -41,8 +41,21 @@ function runEnter() {
     
     // If the input value is a date... 
     if (inputDate) {
-      filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === )
+      filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputDate);
     }
+    if (inputCity) {
+      filteredData = tableData.filter(ufoSighting => ufoSighting.city === inputCity);
+    }
+    if (inputState) {
+      filteredData = tableData.filter(ufoSighting => ufoSighting.state === inputState);
+    }
+    if (inputCountry) {
+      filteredData = tableData.filter(ufoSighting => ufoSighting.country === inputCountry);
+    }
+    if (inputShape) {
+      filteredData = tableData.filter(ufoSighting => ufoSighting.shape === inputShape);
+    }
+
     
 
     // Showing input value results on the table 
