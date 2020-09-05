@@ -30,16 +30,17 @@ function runEnter() {
     d3.event.preventDefault();
 
     // Get the input value for date, city, state, country and shape
+    // Account for the lower casing in the data 
     var inputDate = d3.select("#datetime").node().value;
-    var inputCity = d3.select("#city").node().value;
-    var inputState = d3.select("#state").node().value;
-    var inputCountry = d3.select("#country").node().value;
-    var inputShape = d3.select("#shape").node().value;
+    var inputCity = d3.select("#city").node().value.toLowerCase();
+    var inputState = d3.select("#state").node().value.toLowerCase();
+    var inputCountry = d3.select("#country").node().value.toLowerCase();
+    var inputShape = d3.select("#shape").node().value.toLowerCase();
 
   
-    // Filter the results depending on the input value  
+    //Filter the results depending on the input value  
     
-    // If the input value is a date... 
+    /// If the input value is a date... 
     if (inputDate) {
       filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputDate);
     }
@@ -57,11 +58,10 @@ function runEnter() {
     }
 
     
-
     // Showing input value results on the table 
     if (filteredData.length === 0) {
         tbody.html("");
-        tbody.text("Sorry, there are no UFO sightings for the date you entered");
+        tbody.text("Sorry, there are no UFO sightings for the values you entered");
     }
     else {
         tbody.html("");

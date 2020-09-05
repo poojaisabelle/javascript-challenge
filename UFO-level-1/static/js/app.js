@@ -49,7 +49,7 @@ function runEnter() {
     //console.log(inputValue);
 
     // Use the input value to filter the results accordingly 
-    var filteredData = tableData.filter(ufoSighting => ufoSighting.datetime == inputValue);
+    var filteredData = tableData.filter(ufoSighting => ufoSighting.datetime === inputValue);
     // console.log(filteredData);
 
     // Showing input value results on the table 
